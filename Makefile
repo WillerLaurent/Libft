@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lwiller <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: lwiller <lwiller@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 02:43:42 by lwiller           #+#    #+#              #
-#    Updated: 2020/12/02 17:26:45 by lwiller          ###   ########lyon.fr    #
+#    Updated: 2020/12/10 08:17:50 by lwiller          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ CFLAGS	= -Wall -Werror -Wextra
 		$(CC) -c $< $(CFLAGS)
 
 ${NAME}:${OBJS}
-		 ar rcs ${NAME} ${OBJS}
+		 ar rcs ${NAME} $<
 		 @echo "Libft done !"
 
 all:	${NAME}
@@ -48,7 +48,7 @@ bonus:	${OBJBONS} ${OBJS}
 		
 
 clean:	
-		rm -f ${OBJS}
+		rm -f ${OBJS} ${OBJBONS}
 
 fclean:	clean
 		rm -f ${NAME}
